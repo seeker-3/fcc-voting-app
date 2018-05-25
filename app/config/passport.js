@@ -30,13 +30,14 @@ module.exports = function (passport) {
 				if (user) {
 					return done(null, user);
 				} else {
-					var newUser = new User();
-
-					newUser.github.id = profile.id;
-					newUser.github.username = profile.username;
-					newUser.github.displayName = profile.displayName;
-					newUser.github.publicRepos = profile._json.public_repos;
-					newUser.nbrClicks.clicks = 0;
+					var newUser = new User({
+						github: {
+							id: profile.id,
+							username: profile.username,
+							displayName: profile.displayName,
+							publicRepos: profile._json.public_repos,
+						}
+					});
 
 					newUser.save(function (err) {
 						if (err) {
