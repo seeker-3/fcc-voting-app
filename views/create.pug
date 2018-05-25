@@ -1,0 +1,21 @@
+doctype html
+html
+	head
+		title Create
+		style
+			include create.css
+	body
+		form(method='POST' action='/survey' onsubmit='return validate()')
+			label(for='title') title:
+			input(name='title')
+			#items
+				label(for='item1') item1:
+				input(name='item1')
+				label(for='item2') item2:
+				input(name='item2')
+			button#add(type='button') add
+			button#submit submit
+			
+		script
+			include ajax.js
+			include create.js

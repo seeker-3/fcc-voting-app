@@ -1,0 +1,21 @@
+doctype html
+html
+	head
+		title=title
+		style
+			include survey.css
+	body
+		#items
+			each item in items
+				.item
+					span.percent=item.percent
+					span %
+					br
+					br
+					span.votes=item.votes
+					br
+					button=item.item
+	foot
+		script
+			include ajax.js
+			include survey.js

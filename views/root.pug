@@ -1,0 +1,19 @@
+doctype html
+html
+	head
+		title Voting App
+		style
+			include root.css
+	body
+		
+		nav
+			span Voting App
+			a#create(href='/create') Create
+			a(href='/api/:id') User
+			a(href='/logout') Log Out
+		#surveys
+		script
+			include ajax.js
+			include root.js
+		
+			
